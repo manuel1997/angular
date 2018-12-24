@@ -1,0 +1,20 @@
+<div class="container col-md-4 mt-5">
+  <div class="panel">
+    <form (ngSubmit)="registroUser()" class="form-signin">
+      <h2 class="form-signin-heading">Please sign in</h2>
+      <div class="container">
+      <div class="form-group">
+      <input class="form-control" [(ngModel)]="email" name="email" placeholder="Email address" required="" autofocus="" type="text">
+    </div>
+    <div class="form-group">
+      <input class="form-control" [(ngModel)]="password" name="password" placeholder="Password" required="" type="password">
+    </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </div>
+    </form>
+  
+
+  </div>
+
+
+</div>
