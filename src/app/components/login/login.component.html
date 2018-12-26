@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="card card-container">
+      <h1>Login</h1>
+        <p id="profile-name" class="profile-name-card"></p>
+        <form (ngSubmit)="loginUser()" class="form-signin">
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="email" [(ngModel)]="email" name="email" id="usu" class="form-control sinborde" placeholder="email" required >
+            <input type="password" [(ngModel)]="password" name="password" id="pass" class="form-control sinborde" placeholder="Password" required>                
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button>
+        </form>
+    </div>
+</div>
