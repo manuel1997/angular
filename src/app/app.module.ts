@@ -14,6 +14,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+
 import { ConexionService } from './services/conexion.service';
 import { AuthserviceService } from './services/authservice.service';
 import { ListaComponent } from './components/lista/lista.component';
@@ -26,10 +27,13 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { CuerpoComponent } from './components/cuerpo/cuerpo.component';
 
 
+import { GuardGuard} from './seguridad/guard.guard';
+
+
 const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'cuerpo', component: CuerpoComponent },
+  { path: 'cuerpo', component: CuerpoComponent, canActivate: [GuardGuard] },
   { path: '',component: InicioComponent, pathMatch: 'full' },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
@@ -58,7 +62,7 @@ const routes: Routes = [
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
-  providers: [ConexionService, AuthserviceService],
+  providers: [ConexionService, AuthserviceService, GuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
